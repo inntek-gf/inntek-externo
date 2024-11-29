@@ -8,6 +8,8 @@ using System.Threading;
 using FastEndpoints;
 using System.Text;
 using System;
+using Microsoft.Extensions.Options;
+using GF.Fussion.Web.Models.Sections;
 
 namespace GF.Fussion.Web.Controllers.Login;
 
@@ -18,8 +20,10 @@ namespace GF.Fussion.Web.Controllers.Login;
 /// <remarks>
 /// <c>POST: /api/Login/CreateToken</c>
 /// </remarks>
-public sealed class CreateToken : Endpoint<TokenRequestDto>
+public sealed class CreateToken(IOptions<CommonConfigurationSection> commonConfiguration) : Endpoint<TokenRequestDto>
 {
+    private readonly CommonConfigurationSection _commonConfiguration = commonConfiguration.Value;
+
     public sealed override void Configure ()
     {
         Post("/Login/CreateToken");
@@ -60,7 +64,7 @@ public sealed class CreateToken : Endpoint<TokenRequestDto>
     private SigningCredentials GetSigningCredentials ()
     {
         byte[] key = Encoding.UTF8
-            .GetBytes(Config["Auth:JwtSecret"]!);
+            .GetBytes(_commonConfiguration.JWToken);
 
         return new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature);
     }

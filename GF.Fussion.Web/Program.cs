@@ -26,9 +26,12 @@ Console.OutputEncoding = Encoding.UTF8;
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 #region Common Global Options.
+IConfigurationSection commonConfigurationOptions = builder.Configuration
+    .GetRequiredSection(CommonConfigurationSection.SectionName);
+
 builder.Services
     .AddOptions<CommonConfigurationSection>()
-    .Bind(builder.Configuration.GetRequiredSection(CommonConfigurationSection.SectionName))
+    .Bind(commonConfigurationOptions)
     .ValidateOnStart();
 #endregion
 
@@ -58,7 +61,7 @@ builder.Services
                ValidateIssuer = false,
                ValidateLifetime = true,
                ValidateIssuerSigningKey = true,
-               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Auth:JwtSecret"]!))
+               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(commonConfigurationOptions.GetValue<string>("JWToken")!))
            };
        });
 #endregion

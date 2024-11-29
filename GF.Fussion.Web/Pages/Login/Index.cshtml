@@ -1,4 +1,38 @@
 ﻿@page
 @model GF.Fussion.Web.Pages.Login.IndexModel
 @{
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portal externo." />
+    <meta name="keywords" content="Inntek, Fransun" />
+    <meta name="author" content="Inntek" />
+    <meta name="classification" content="Business" />
+    <meta name="copyright" content="Inntek" />
+    <meta name="robots" content="noindex" />
+
+    <title>Inntek Web</title>
+    <base href="~/" />
+
+    <link rel="manifest" href="~/manifest.webmanifest">
+    <link rel="stylesheet" href="~/lib/sweetalert2/dist/sweetalert2.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <partial name="_ImportmapScript" />
+</head>
+<body class="bg-body h-100">
+    <main>
+        <inntek-login id="formulario" portal-name="Inntek externo" portal-id="0000"></inntek-login>
+        <inntek-waves></inntek-waves>
+    </main>
+    <script src="https://inntekweb.com:8250/Script/Component/Repository"></script>
+    <script src="https://inntekweb.com:8250/Script/Component/Login"></script>
+    <script src="https://inntekweb.com:8250/Script/Component/Waves"></script>
+    <script defer type="module" src="~/js/pages/login/site.js" asp-append-version="true"></script>
+</body>
+</html>
