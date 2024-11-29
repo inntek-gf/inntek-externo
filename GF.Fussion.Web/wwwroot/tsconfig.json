@@ -1,0 +1,40 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noEmitOnError": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "downlevelIteration": false,
+    "strictNullChecks": true,
+    "esModuleInterop": false,
+    "skipLibCheck": false,
+    "pretty": false,
+    "baseUrl": "./",
+    "target": "esnext",
+    "module": "esnext",
+    "noImplicitAny": false,
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@popperjs/core": [ "lib/popperjs/core/dist/esm/popper.min.js" ],
+      "bootstrap": [ "lib/bootstrap/js/bootstrap.esm.min.js" ],
+      "vue": [ "lib/vue/dist/vue.esm-browser.min.js" ],
+      "sweetalert2": [ "lib/sweetalert2/dist/sweetalert2.esm.min.js" ],
+      "tom-select": [ "lib/tom-select/dist/esm/tom-select.complete.min.js" ],
+      "dexie": [ "lib/dexie/dist/modern/dexie.min.mjs" ]
+    }
+  },
+  "include": [
+    "js/**/*"
+  ],
+  "exclude": [
+    "lib/**/*",
+    "css/**/*",
+    "images/**/*"
+  ]
+}

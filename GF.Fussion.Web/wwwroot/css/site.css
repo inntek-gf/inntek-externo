@@ -1,0 +1,51 @@
+:root {
+    --bs-primary: #0057ce;
+    --bs-secondary: #585e71;
+    --ag-material-primary-color: #0057ce !important;
+    --ag-material-accent-color: #c6303e !important;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+@keyframes sweep {
+    from {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-sweep {
+    animation: sweep 250ms ease-in-out;
+}
+
+.swal2-actions {
+    width: 100% !important;
+    padding: 0 1rem !important;
+}
+
+.swal2-styled {
+    width: 100% !important;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+}
+
+.swal2-popup {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175) !important;
+    border: none !important;
+}
+
+.swal2-backdrop-show {
+    backdrop-filter: blur(7px);
+    background: rgba(0,0,0,.15) !important;
+}
+
+.bg-frosted {
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(15px);
+}

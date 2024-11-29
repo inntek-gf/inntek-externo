@@ -1,0 +1,49 @@
+﻿@page
+
+@section Scripts {
+    <script src="~/lib/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script type="module" src="~/js/pages/demo/personalInfo.js" defer></script>
+}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="mb-3">Formulario</h2>
+            </div>
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <form class="row" name="personalInfo" id="personalInfoForm">
+                            <input type="hidden" id="id" name="id" />
+                            <div class="col-3">
+                                <label for="firstname" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" required>
+                            </div>
+
+                            <div class="col-3">
+                                <label for="lastname" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname" required>
+                            </div>
+
+                            <div class="col-3">
+                                <label for="age" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="age" name="age" required>
+                            </div>
+
+                            <div class="col-3" style="margin-top:30px">
+                                <button type="submit" class="w-100 btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+
+                        <div class="mt-4">
+                            <div id="demoTable" style="width:100%; height:600px" class="ag-theme-material"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
